@@ -5,13 +5,13 @@
   </a>
 </p>
 
-<p align="center">Simple Next.j 14 boilerplate that uses <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
+<p align="center">Simple Next.j 15 boilerplate that uses <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
 
 <br/>
 
 ## Introduction
 
-This is a hybrid Next.js 14 + Python template. One great use case of this is to write Next.js apps that use Python AI libraries on the backend, while still having the benefits of Next.js Route Handlers and Server Side Rendering.
+This is a hybrid Next.js 15 + Python template. One great use case of this is to write Next.js apps that use Python AI libraries on the backend, while still having the benefits of Next.js Route Handlers and Server Side Rendering.
 
 ## How It Works
 
@@ -40,41 +40,39 @@ You can clone & deploy it to Vercel with one click:
 You can clone & create this repo with the following command
 
 ```bash
-npx create-next-app nextjs-fastapi --example "https://github.com/digitros/nextjs-fastapi"
+git clone https://github.com/HamedMP/nextjs-fastapi-example.git
 ```
 
 ## Getting Started
 
-First, create and activate a virtual environment:
+First, install uv if not already installed:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+pip install uv
+```
+
+Then, create and activate a virtual environment using uv:
+
+```bash
+uv venv
+source .venv/bin/activate
 ```
 
 Then, install the dependencies:
 
 ```bash
-npm install
-# or
-yarn
-# or
 pnpm install
 ```
 
-Then, run the development server(python dependencies will be installed automatically here):
+Then, run the development server (Python dependencies will be installed automatically using uv):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The FastApi server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
+The FastAPI server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
 
 ## Learn More
 

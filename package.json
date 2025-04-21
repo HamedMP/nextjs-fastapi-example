@@ -1,0 +1,29 @@
+{
+  "name": "nextjs-fastapi",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "fastapi-dev": "./run-fastapi.sh",
+    "next-dev": "next dev",
+    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run fastapi-dev\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/node": "22.5.5",
+    "@types/react": "18.3.8",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.20",
+    "concurrently": "^9.0.1",
+    "eslint": "8.41.0",
+    "eslint-config-next": "^15.3.1",
+    "next": "^15.3.1",
+    "postcss": "^8.5.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "^4.1.4",
+    "typescript": "5.6.2"
+  }
+}

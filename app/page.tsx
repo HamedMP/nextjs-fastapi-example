@@ -35,28 +35,48 @@ export default function Home() {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center min-h-screen text-lg font-medium">
+        Loading...
+      </div>
+    );
+  if (error)
+    return (
+      <div className="flex justify-center items-center min-h-screen p-4 text-red-600 font-medium">
+        Error: {error}
+      </div>
+    );
 
   return (
-    <main className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Hello World</h1>
-      {fastApiData && (
-        <div className="mb-4">
-          <h2 className="text-xl font-semibold">Response from FastAPI:</h2>
-          <pre className="bg-gray-100 p-2 rounded">
-            {JSON.stringify(fastApiData, null, 2)}
-          </pre>
+    <main className="m-10 min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6 md:p-10">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-slate-800 border-b pb-3">
+          Next.js + FastAPI Integration
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {fastApiData && (
+            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <h2 className="text-xl font-semibold mb-3 text-blue-600">
+                FastAPI Response
+              </h2>
+              <pre className="bg-slate-50 p-4 rounded-md overflow-auto border border-slate-200 text-sm">
+                {JSON.stringify(fastApiData, null, 2)}
+              </pre>
+            </div>
+          )}
+          {nextJsData && (
+            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <h2 className="text-xl font-semibold mb-3 text-emerald-600">
+                Next.js API Response
+              </h2>
+              <pre className="bg-slate-50 p-4 rounded-md overflow-auto border border-slate-200 text-sm">
+                {JSON.stringify(nextJsData, null, 2)}
+              </pre>
+            </div>
+          )}
         </div>
-      )}
-      {nextJsData && (
-        <div>
-          <h2 className="text-xl font-semibold">Response from Next.js API:</h2>
-          <pre className="bg-gray-100 p-2 rounded">
-            {JSON.stringify(nextJsData, null, 2)}
-          </pre>
-        </div>
-      )}
+      </div>
     </main>
   );
 }
